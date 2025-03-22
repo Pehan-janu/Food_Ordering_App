@@ -13,7 +13,6 @@ export default function Home() {
       <Link href="/cart">Cart</Link>
       <Link href="/checkout">Checkout</Link>
       <Link href="/login">Login</Link>
-      <Link href="/signup">Signup</Link>
     </nav>
       </header>
    
