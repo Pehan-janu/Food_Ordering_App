@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/layout/Header";
-import Hero from "@/components/layout/Hero";
-import HomeMenu from "@/components/layout/HomeMenu";
-import SectionHeaders from "@/components/layout/SectionHeaders";
+import Header from "../components/layout/Header";
+import Hero from "../components/layout/Hero";
+import HomeMenu from "../components/layout/HomeMenu";
+import SectionHeaders from "../components/layout/SectionHeaders";
+import RegisterPage from "./register/page";
 
 export default function Home() {
   return (
     <>
-    <Header/>
     <Hero/>
     <HomeMenu/>
 
@@ -18,7 +18,7 @@ export default function Home() {
         mainHeader={'About Us'}
       />
 
-      <div classname="max-w-2xl mx-auto mt-4 text-gray-500 text-justify leading-relaxed flex flex-col gap-4">
+      <div className="max-w-2xl mx-auto mt-4 text-gray-500 text-justify leading-relaxed flex flex-col gap-4">
 
       <p>    
           At GodDu PizZa, we believe that great pizza brings people together. Our journey started with a passion for 
@@ -52,9 +52,7 @@ export default function Home() {
       </div>
     </section>
 
-    <footer className="border-t p-8 text-center text-gray-500">
-        &copy; 2023 GodDu PizZa. All rights reserved.
-    </footer>
+
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { Roboto} from "next/font/google";
 import "./globals.css";
+import Header from "../components/layout/Header";
 
 const roboto = Roboto({
   subsets: ["latin"],weights: [400, 500, 700],
@@ -15,7 +16,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={roboto.className} >
         <main className=" max-w-5xl mx-auto px-4 py-8 " >
+        <Header/>
         {children}
+
+        <footer className="border-t p-8 text-center mt-16 text-gray-500">
+        &copy; 2023 GodDu PizZa. All rights reserved.
+        </footer>
         </main>
       </body>
     </html>
