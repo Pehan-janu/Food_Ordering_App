@@ -64,6 +64,7 @@ export default function RegisterPage() {
       <input type='email' placeholder='email' value={email} disabled={creatingUser}  onChange={ev=>setEmail(ev.target.value)}></input>
       <input type='password' placeholder='password' value={password} disabled={creatingUser} onChange={ev=>setPassword(ev.target.value)}></input>
       <button type='submit' disabled={creatingUser}> Register</button>
+      
       <div className='my-4 text-center text-gray-500'>
         or login with provider
       </div>
