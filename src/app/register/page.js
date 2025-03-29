@@ -7,15 +7,21 @@ export default function RegisterPage() {
 
   const [email,setEmail]  =useState('');
   const [password,setPassword] =useState('');
+  const[creatingUser,setCreatingUser] = useState(true);
+  const[userCreated,setUserCreated] = useState(false);
 
-  function handleSubmit(ev){
+   async function handleSubmit(ev){
 
     ev.preventDefault();
-    fetch('/api/register', {
+
+    setCreatingUser(true);
+
+    await fetch('/api/register', {
       method: 'POST',
       body: JSON.stringify({email,password}),
       headers: {'Content-Type': 'application/json'}
     });
+    setCreatingUser(false);
 
   }
 
@@ -27,9 +33,9 @@ export default function RegisterPage() {
 
     <form className='block max-w-xs mx-auto' onSubmit={handleSubmit}>
      
-      <input type='email' placeholder='email' value={email} onChange={ev=>setEmail(ev.target.value)}></input>
-      <input type='password' placeholder='password' value={password} onChange={ev=>setPassword(ev.target.value)}></input>
-      <button type='submit'> Register</button>
+      <input type='email' placeholder='email' value={email} disabled={creatingUser}  onChange={ev=>setEmail(ev.target.value)}></input>
+      <input type='password' placeholder='password' value={password} disabled={creatingUser} onChange={ev=>setPassword(ev.target.value)}></input>
+      <button type='submit' disabled={creatingUser}> Register</button>
       <div className='my-4 text-center text-gray-500'>
         or login with provider
       </div>
